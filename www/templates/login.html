@@ -1,5 +1,9 @@
 
 <ion-view view-title="Registrar Datos">
+  <ion-nav-bar class="bar-calm">
+      <ion-nav-back-button class="no-text">
+      </ion-nav-back-button>
+  </ion-nav-bar>
     <br/>
     <ion-content>
       <div class="im-wrapper">
@@ -9,7 +13,7 @@
         </label>
         <label class="item item-input item-floating-label">
           <span class="input-label">Apellidos</span>
-          <input type="text" placeholder="Apellidos">
+          <input type="text" placeholder="Apellidos" ng-model='usuario.apellidos'>
         </label>
         <br />
         <button ng-click="guardar()" class="button button-block button-calm ink" data-ink-color="#9DEAFF" data-ink-opacity="1">
