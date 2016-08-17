@@ -11,7 +11,7 @@
                 <button class="button button-icon button-clear ion-android-more-vertical" id="menu-popover" ng-click="popover.show($event)"></button>
             </ion-nav-buttons>
         </ion-nav-bar>
-        <button id="fab" class="button button-positive button-fab button-fab-bottom-right">
+        <button ng-hide="true" id="fab" class="button button-positive button-fab button-fab-bottom-right">
             <i class="icon ion-social-twitter"></i>
         </button>
         <ion-nav-view name="menuContent"></ion-nav-view>
@@ -25,6 +25,9 @@
         </ion-header-bar>
         <ion-content class="stable-bg has-expanded-header">
             <ion-list>
+                <ion-item nav-clear menu-close href="#/app/materias">
+                    Materias
+                </ion-item>
                 <ion-item nav-clear menu-close href="#/app/components">
                     Components+
                 </ion-item>

@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 var db = null;
 var is_logged = false;
-var app = angular.module('starter', ['ionic', 'ionic-material','ngCordova']);
+var app = angular.module('starter', ['ionic', 'ionic-material','ngCordova','lokijs']);
 
 app.run(function ($ionicPlatform,$cordovaSQLite,Usuario,$state,$rootScope,$timeout) {
     $ionicPlatform.ready(function () {
@@ -75,6 +75,15 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         url:'/login',
         templateUrl:'templates/login.html',
         controller:'LoginCtrl'
+      })
+      .state('app.materias', {
+          url: '/materias',
+          views: {
+              'menuContent': {
+                  templateUrl: 'templates/materialist.html',
+                  controller: 'MateriasCtrl'
+              }
+          }
       })
 
     .state('app.lists', {
