@@ -1,11 +1,8 @@
-<!-- <button id="fab" class="button button-positive button-fab button-fab-bottom-right">
-    <i class="icon ion-social-twitter"></i>
-</button> -->
 <ion-view view-title="Materias Registradas">
     <br/>
     <ion-content>
       <ion-list>
-        <a class="item"  ng-repeat="item in materias">
+        <a class="item" on-hold="showEditMateriaModal(item)" ng-repeat="item in materias" href="#/app/materias/{{item.$loki}}">
            {{item.nombre|uppercase}}
            <span class="item-note">
                {{item.paralelo|uppercase}}

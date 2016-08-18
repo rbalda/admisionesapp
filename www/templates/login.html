@@ -16,7 +16,7 @@
           <input type="text" placeholder="Apellidos" ng-model='usuario.apellidos'>
         </label>
         <br />
-        <button ng-click="guardar()" class="button button-block button-calm ink" data-ink-color="#9DEAFF" data-ink-opacity="1">
+        <button ng-click="guardar()" ng-disabled="!usuario.apellidos || !usuario.nombres" class="button button-block button-calm ink" data-ink-color="#9DEAFF" data-ink-opacity="1">
           Guardar
         </button>
         </div>

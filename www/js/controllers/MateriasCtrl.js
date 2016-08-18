@@ -1,6 +1,6 @@
 app.controller('MateriasCtrl',function($scope,Materia,$ionicModal, $ionicPlatform,ionicMaterialInk){
   ionicMaterialInk.displayEffect();
-  $scope.materias
+  $scope.materias;
   $ionicPlatform.ready(function() {
 
         // Initialize the database.
@@ -36,6 +36,7 @@ app.controller('MateriasCtrl',function($scope,Materia,$ionicModal, $ionicPlatfor
 
     $scope.saveMateria = function() {
         if ($scope.isAdd) {
+            $scope.materia.calificaciones = []
             Materia.agregarMateria($scope.materia);
         } else {
             Materia.updateMateria($scope.materia);
@@ -48,7 +49,7 @@ app.controller('MateriasCtrl',function($scope,Materia,$ionicModal, $ionicPlatfor
     }
 
     $scope.deleteMateria = function() {
-        Materia.deleteMateria($scope.materia);
+        Materia.eliminarMateria($scope.materia);
         $scope.modal.hide();
     };
 

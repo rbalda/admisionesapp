@@ -1,0 +1,13 @@
+<ion-view view-title="Lista del Material de apoyo">
+    <br/>
+    <ion-content>
+      <ion-list>
+        <a class="item"  ng-repeat="item in materialApoyo" href="#/app/material/{{$index}}">
+           {{item.nombre|uppercase}}
+        </a>
+        <ion-item ng-hide="materialApoyo.length">
+          No hay material de apoyo para esta materia
+        </ion-item>
+      </ion-list>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,25 @@
+<ion-modal-view>
+      <ion-header-bar class="bar-positive">
+        <h1 class="title">{{ action }} Nota</h1>
+        <div class="buttons">
+        <button ng-hide="isAdd" ng-click="deleteNota()" class="button button-icon button-clear ion-trash-a"></button>
+        <button class="button button-icon button-clear ion-close" ng-click="closeModal()"></button>
+        </div>
+      </ion-header-bar>
+      <ion-content>
+        <div class="im-wrapper">
+          <label class="item item-input item-floating-label">
+          <input type="text" placeholder="Descripcion de Nota" ng-model="nota.descripcion">
+          </label>
+          <label class="item item-input item-floating-label">
+          <input type="number" placeholder="Valor" ng-model="nota.nota">
+          </label>
+          <label class="item item-input item-floating-label">
+          <input type="number" placeholder="Valor Posible" ng-model="nota.posible">
+          </label>
+        </div>
+        <div class="padding">
+          <button ng-click="saveNota()" ng-disabled=" !nota.descripcion || !nota.posible ||!nota.nota|| nota.posible < nota.nota " class="button button-block button-positive activated">Guardar</button>
+        </div>
+      </ion-content>
+</ion-modal-view>

@@ -1,0 +1,13 @@
+<ion-view view-title="{{material.nombre|uppercase}}">
+    <br/>
+    <ion-content>
+      <ion-list>
+        <a class="item"  ng-repeat="item in material.capitulos" href="#/app/material/{{material.id}}/{{$index}}">
+           CAPITULO {{item.id}}
+        </a>
+        <ion-item ng-hide="material.capitulos.length">
+          No hay materias registradas aun
+        </ion-item>
+      </ion-list>
+    </ion-content>
+</ion-view>

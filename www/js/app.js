@@ -46,6 +46,10 @@ app.run(function ($ionicPlatform,$cordovaSQLite,Usuario,$state,$rootScope,$timeo
           console.log("valgo");
         });
     });
+
+    $rootScope.tiposEvaluacion = [
+      "Deberes","Lecciones","Participacion","Proyectos","Examen"
+    ]
 })
 
 app.config(function ($stateProvider, $urlRouterProvider) {
@@ -85,58 +89,83 @@ app.config(function ($stateProvider, $urlRouterProvider) {
               }
           }
       })
-
-    .state('app.lists', {
-        url: '/lists',
-        views: {
-            'menuContent': {
-                templateUrl: 'templates/lists.html',
-                controller: 'ListsCtrl'
-            }
-        }
-    })
-
-    .state('app.ink', {
-        url: '/ink',
-        views: {
-            'menuContent': {
-                templateUrl: 'templates/ink.html',
-                controller: 'InkCtrl'
-            }
-        }
-    })
-
-    .state('app.motion', {
-        url: '/motion',
-        views: {
-            'menuContent': {
-                templateUrl: 'templates/motion.html',
-                controller: 'MotionCtrl'
-            }
-        }
-    })
-
-    .state('app.components', {
-        url: '/components',
-        views: {
-            'menuContent': {
-                templateUrl: 'templates/components.html',
-                controller: 'ComponentsCtrl'
-            }
-        }
-    })
-
-    .state('app.extensions', {
-        url: '/extensions',
-        views: {
-            'menuContent': {
-                templateUrl: 'templates/extensions.html',
-                controller: 'ExtensionsCtrl'
-            }
-        }
-    })
-    ;
+      .state('app.materia', {
+          url: '/materias/:id',
+          views: {
+              'menuContent': {
+                  templateUrl: 'templates/materia-detail.html',
+                  controller: 'MateriasDetailCtrl'
+              }
+          }
+      })
+      .state('app.tutorias', {
+          url: '/tutorias',
+          views: {
+              'menuContent': {
+                  templateUrl: 'templates/tutorias.html',
+              }
+          }
+      })
+      .state('app.asesorias', {
+          url: '/asesorias',
+          views: {
+              'menuContent': {
+                  templateUrl: 'templates/asesorias.html',
+              }
+          }
+      })
+      .state('app.clases', {
+          url: '/clases',
+          views: {
+              'menuContent': {
+                  templateUrl: 'templates/horarios.html',
+              }
+          }
+      })
+      .state('app.buses', {
+          url: '/buses',
+          views: {
+              'menuContent': {
+                  templateUrl: 'templates/buses.html',
+              }
+          }
+      })
+      .state('app.materialayuda', {
+          url: '/material',
+          views: {
+              'menuContent': {
+                  templateUrl: 'templates/materialayuda.html',
+                  controller: 'MaterialAyudaCtrl'
+              }
+          }
+      })
+      .state('app.materialayudadetail', {
+          url: '/material/:idMaterial',
+          views: {
+              'menuContent': {
+                  templateUrl: 'templates/materialayudadetail.html',
+                  controller: 'MaterialAyudaDetailCtrl'
+              }
+          }
+      })
+      .state('app.capitulodetail', {
+          url: '/material/:idMaterial/:cap',
+          views: {
+              'menuContent': {
+                  templateUrl: 'templates/capitulo.html',
+                  controller: 'CapituloCtrl'
+              }
+          }
+      })
+      .state('app.home', {
+          url: '/home',
+          views: {
+              'menuContent': {
+                  templateUrl: 'templates/home.html'
+              }
+          }
+      });
 
     // if none of the above states are matched, use this as the fallback
-    $urlRouterProvider.otherwise('/app/lists');
+    $urlRouterProvider.otherwise('/app/home');
 });

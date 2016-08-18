@@ -31,7 +31,7 @@ app.factory('Materia',function($q,Loki){
   };
 
   self.updateMateria = function(materia){
-    _materias.insert(materia);
+    _materias.update(materia);
   };
 
   self.buscarMateria= function(materiaId){
@@ -39,7 +39,7 @@ app.factory('Materia',function($q,Loki){
   }
 
   self.eliminarMateria = function(materia){
-    _materias.delete(materia);
+    _materias.remove(materia);
   };
   return self;
 });

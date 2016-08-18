@@ -1,0 +1,13 @@
+<ion-view view-title="{{materia|uppercase}} CAPITULO {{capitulo.id}}">
+    <br/>
+      <ion-content>
+        <div class="row">
+      &nbsp;<h4>CAPITULO {{capitulo.id}}</h4>
+    </div>
+        <div class="row" ng-repeat="item in rango">
+          <div class="col col-100">
+            <img ng-src="img/material/{{materia}}/cap{{capitulo.id}}/{{item}}.PNG" style="width:100%"></img>
+          </div>
+        </div>
+    </ion-content>
+</ion-view>

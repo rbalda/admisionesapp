@@ -1,8 +1,8 @@
 <ion-modal-view>
-      <ion-header-bar class="bar-positive-100">
+      <ion-header-bar class="bar-positive">
         <h1 class="title">{{ action }} Materia</h1>
         <div class="buttons">
-        <button ng-hide="isAdd" ng-click="deleteMateria()" class="button button-icon icon ion-trash-a"></button>
+        <button ng-hide="isAdd" ng-click="deleteMateria()" class="button button-icon button-clear ion-trash-a"></button>
         <button class="button button-icon button-clear ion-close" ng-click="closeModal()"></button>
         </div>
       </ion-header-bar>
@@ -12,11 +12,11 @@
           <input type="text" placeholder="Nombre de Materia" ng-model="materia.nombre">
           </label>
           <label class="item item-input item-floating-label">
-          <input type="text" placeholder="Paralelo" ng-model="materia.paralelo">
+          <input type="number" placeholder="Paralelo" ng-model="materia.paralelo">
           </label>
         </div>
         <div class="padding">
-          <button ng-click="saveMateria()" class="button button-block button-positive activated">Guardar</button>
+          <button ng-click="saveMateria()" ng-disabled="!materia.nombre || !materia.paralelo" class="button button-block button-positive activated">Guardar</button>
         </div>
       </ion-content>
 </ion-modal-view>
