@@ -3,7 +3,7 @@ app.controller('LoginCtrl', function ($scope, $stateParams, ionicMaterialInk,$co
   $scope.usuario = {nombres:'',apellidos:''};
   $scope.guardar = function(){
     Usuario.add($scope.usuario);
-    $state.go('app.lists');
+    $state.go('app.home');
     $rootScope.usuario_global = $scope.usuario;
   };
 });
